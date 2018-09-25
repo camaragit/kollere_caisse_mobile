@@ -1,8 +1,8 @@
 {
   "name": "kollere",
-  "app_id": "",
-  "type": "ionic-angular",
   "integrations": {
     "cordova": {}
-  }
+  },
+  "type": "ionic-angular",
+  "pro_id": "6a13eeda"
 }

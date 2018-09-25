@@ -1,0 +1,79 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="kollere">
+    <ion-title align="center">KOLLERE-BOUTIQUE</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div class="p-view-connexion list padding">
+    <img class="p-img p-img-connexion" src="assets/imgs/kollere.png" alt="logo">
+    <div>
+      <fieldset>
+        <legend>Liaison Imprimante</legend>
+        <ion-item no-lines="">
+          <ion-icon name="ios-print-outline" item-left></ion-icon>
+          <ion-label>Recherche Imprimante</ion-label>
+          <ion-toggle [(ngModel)]="GblVariable.statusImpriamte" (ionChange)="chercherimprimante()" ></ion-toggle>
+        </ion-item>
+        <p *ngIf="GblVariable.notfound">{{GblVariable.message}}</p>
+        <div *ngIf="!GblVariable.notfound">
+          <ion-list radio-group [(ngModel)]="selectedImp">
+            <ion-item no-lines="" *ngFor="let imp of GblVariable.listeImprimantes;">
+              <ion-label>{{ imp.name }}</ion-label>
+              <ion-radio [value]="imp" ></ion-radio>
+            </ion-item>
+          </ion-list>
+          <ion-buttons end="" >
+            <button *ngIf="!GblVariable.notfound" ion-button icon-end style="text-transform: none" [disabled]="!selectedImp" color="kollere" (click)="lier()">
+              <span >Lier
+                <ion-icon name="ios-bluetooth-outline"></ion-icon>
+             </span>
+            </button>
+          </ion-buttons>
+        </div>
+
+      </fieldset>
+
+    </div>
+  <div padding="">
+    <form [formGroup]="datalogin">
+      <ion-item>
+        <ion-label floating >Utilisateur</ion-label>
+
+        <ion-input type="text" formControlName="login"></ion-input>
+
+      </ion-item>
+      <ion-item>
+        <ion-label floating >Mot de passe</ion-label>
+
+        <ion-input [type]="type" formControlName="password" ></ion-input>
+
+      </ion-item>
+      <ion-buttons end=""  >
+
+        <button color="kollere" ion-button icon-only icon-end small outline round style="border: none;" (click)="affichemdp()">
+      <span (click)="affichemdp()">
+        <ion-icon name="md-eye"></ion-icon>
+       </span>
+        </button>
+      </ion-buttons>
+
+      <div padding="">
+        <button (click)="connexion()" ion-button="" block="" color="kollere" [disabled]="!datalogin.valid">Connexion</button>
+
+      </div>
+
+    </form>
+
+  </div>
+  </div>
+</ion-content>

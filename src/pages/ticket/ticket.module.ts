@@ -11,10 +11,8 @@ import { TicketPage } from './ticket';
   ],
 })
 export class TicketPageModule {
-   codeTicket :string ="";
 
-  chercherCode(){
 
-  }
+
 
 }

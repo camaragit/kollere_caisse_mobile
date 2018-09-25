@@ -1,0 +1,109 @@
+<!--
+  Generated template for the InscriptionPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="kollere">
+    <button ion-button="" menuToggle="">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+    </ion-title>
+    <button ion-button="" menuToggle="">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-buttons end="" >
+
+      <button  ion-button icon-end style="text-transform: none" (click)="logout()">
+      <span >Solde : {{GblVariable.solde}} f cfa | Cash :{{GblVariable.cash}}
+
+       </span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-label class="monlabel" align="center">Inscription Nouveau Client</ion-label>
+  <form class="list-form" [formGroup]="datauser">
+
+    <ion-item>
+      <ion-label floating>
+        <ion-icon name="person" item-start class="text-primary"></ion-icon>
+        Prenom
+      </ion-label>
+      <ion-input type="text" formControlName="prenom"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        <ion-icon name="person" item-start class="text-primary"></ion-icon>
+        Nom
+      </ion-label>
+      <ion-input type="text" formControlName="nom"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        <ion-icon name="ios-call" item-start class="text-primary"></ion-icon>
+        Telephone
+      </ion-label>
+      <ion-input type="tel" formControlName="telephone" maxlength="9" (ionBlur)="veriftel()" (ionFocus)="resetphone()"></ion-input>
+    </ion-item>
+
+    <ion-item
+      *ngIf="((datauser.controls.telephone.hasError('required')) || phoneinvalid==true) && datauser.controls.telephone.touched">
+      <p class="erreur">Saisir  un numéro valide </p>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        <ion-icon name="ios-at-outline" item-start class="text-primary"></ion-icon>
+        E-mail
+      </ion-label>
+      <ion-input type="email" formControlName="email" ></ion-input>
+    </ion-item>
+
+    <ion-list radio-group [formControl]="datauser.controls['genre']">
+      <ion-label>Sexe</ion-label>
+      <ion-item>
+        <ion-label>Masculin</ion-label>
+        <ion-radio value="H" checked></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Feminin</ion-label>
+        <ion-radio value="F"></ion-radio>
+      </ion-item>
+    </ion-list>
+    <ion-item>
+      <ion-label floating>
+        <ion-icon name="person" item-start class="text-primary"></ion-icon>
+        Age
+      </ion-label>
+      <ion-input type="number" formControlName="age" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        <ion-icon name="ios-planet" item-start class="text-primary"></ion-icon>
+        Adresse
+      </ion-label>
+      <ion-input type="text" formControlName="adresse" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        <ion-icon name="person" item-start class="text-primary"></ion-icon>
+        Profession
+      </ion-label>
+      <ion-input type="text" formControlName="profession" ></ion-input>
+    </ion-item>
+
+    <div style="margin-top: 10%;margin-bottom: 10%">
+      <button ion-button icon-start block color="kollere" [disabled]="!datauser.valid || phoneinvalid==true" tappable (click)="inscrire()">
+        <ion-icon  name="md-checkbox-outline"></ion-icon>
+        Inscrire
+      </button>
+    </div>
+
+  </form>
+</ion-content>

@@ -1,14 +1,31 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+<<ion-header>
+  <ion-navbar color="kollere" >
+    <button ion-button="" menuToggle="">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-buttons end="" >
+
+      <button  ion-button icon-end style="text-transform: none" >
+      <span >Solde : {{GblVariable.solde}} f cfa | Cash :{{GblVariable.cash}}
+
+       </span>
+      </button>
+    </ion-buttons>
   </ion-navbar>
+
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+
+<ion-content padding >
+  <ion-label class="monlabel" align="center">KOLLERE BOUTIQUE</ion-label>
+  <div class="p-service p-box padding" color="danger">
+
+    <a *ngFor="let a of menus"   (click)="onPage(a)">
+      <img class="p-service-img " src="{{ a.nom }}" alt="etatplafond">
+      <span class="p-box-title">{{ a.titre }}</span>
+    </a>
+
+
+  </div>
 </ion-content>

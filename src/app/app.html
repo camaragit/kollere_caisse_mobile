@@ -1,1 +1,64 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<!--<ion-menu [content]="content">
+  <ion-header>
+    <ion-navbar color="kollere">
+      <ion-toolbar>
+
+        <ion-title>   <h1 id="proxi-header-logo">Kollere</h1>
+        </ion-title>
+      </ion-toolbar>
+    </ion-navbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <!--<ion-item *ngFor="let m of menus">
+
+       <button menuClose="" ion-item=""  (click)="onPage(m)">
+          {{m.titre}}
+        </button>
+
+
+        <ion-icon name="leaf" item-start></ion-icon>
+        <ion-icon ios="ios-cart" md="md-cart" item-start=""></ion-icon>
+       <button ion-item="" menuClose="">{{m.titre}}</button>
+      </ion-item>
+      <ion-item *ngFor="let m of menus"  menuClose="" (click)="onPage(m)">
+        <span style="color: #999900; font-size: 18px; font-weight: bold;" >
+        <ion-icon name="{{ m.nom }}" item-start></ion-icon>
+        <span >{{m.titre}}</span>
+        </span>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="leaf" item-start></ion-icon>
+        Herbology
+        <ion-icon name="rose" item-end></ion-icon>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="leaf" item-start></ion-icon>
+        Herbology
+        <ion-icon name="rose" item-end></ion-icon>
+      </ion-item>
+
+    </ion-list>
+  </ion-content>
+</ion-menu>-->
+<ion-menu [content]="content">
+  <ion-header >
+    <ion-toolbar color="kollere">
+      <ion-title >Kolleré</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content >
+    <ion-list>
+
+      <button style="font-family: Georgia" menuClose ion-item *ngFor="let m of menus" (click)="openPage(m)" detail-push="" >
+        <ion-icon item-start [name]="m.nom"  ></ion-icon>
+        <span>{{m.titre}}</span>
+
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+
