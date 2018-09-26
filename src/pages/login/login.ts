@@ -25,6 +25,9 @@ export class LoginPage {
   selectedImp:any
 
   constructor(private splashScreen:SplashScreen,private platform:Platform,public navCtrl: NavController, public nav: NavController,private formBuilder:FormBuilder,private store:Storage,private GblVariable:GlobalVariableProvider,private api:ApiProvider) {
+    this.platform.ready().then(()=>{
+      this.splashScreen.hide();
+    });
     this.datalogin = this.formBuilder.group({
       login: ['', Validators.required],
       password: ['', Validators.required]
@@ -52,9 +55,7 @@ export class LoginPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
-    this.platform.ready().then(()=>{
-      this.splashScreen.hide();
-      });
+
   }
   connexion(){
     this.api.afficheloading();
