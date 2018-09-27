@@ -58,11 +58,11 @@ export class MyErrorHandler implements ErrorHandler {
     InscriptionPage,ImprimantePage
   ],
   imports: [
+
+    BrowserModule,IonicStorageModule.forRoot(),
     IonicModule.forRoot(MyApp,{monthNames: ['Janvier', 'Février', 'Mars','Avril','Mai','Juin','Juillet',
         'Août','Septembre','Octobre','Novembre','Décembre' ],
-      dayNames: ['Dimanche', 'Lundi', 'Mardi','Mercredi','Jeudi','Vendredi','Samedi' ]}),
-    BrowserModule,IonicStorageModule.forRoot(),
-    IonicModule.forRoot(MyApp),NgxDatatableModule
+      dayNames: ['Dimanche', 'Lundi', 'Mardi','Mercredi','Jeudi','Vendredi','Samedi' ]}),NgxDatatableModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
