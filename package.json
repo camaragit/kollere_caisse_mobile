@@ -36,9 +36,10 @@
     "cordova-plugin-bluetooth-serial": "^0.4.7",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-file": "^6.0.1",
+    "cordova-plugin-file-transfer": "^1.7.1",
     "cordova-plugin-ionic": "^5.2.4",
     "cordova-plugin-ionic-keyboard": "^2.1.2",
-    "cordova-plugin-ionic-webview": "^1.2.1",
+    "cordova-plugin-ionic-webview": "^2.1.4",
     "cordova-plugin-splashscreen": "^5.0.2",
     "cordova-plugin-whitelist": "^1.3.3",
     "cordova-plugin-x-toast": "^2.7.0",
@@ -62,7 +63,6 @@
       "cordova-plugin-whitelist": {},
       "cordova-plugin-device": {},
       "cordova-plugin-splashscreen": {},
-      "cordova-plugin-ionic-webview": {},
       "cordova-plugin-ionic-keyboard": {},
       "cordova-plugin-bluetooth-serial": {},
       "cordova-wheel-selector-plugin": {},
@@ -70,10 +70,15 @@
       "cordova-plugin-ionic": {
         "APP_ID": "6a13eeda",
         "CHANNEL_NAME": "Master",
-        "UPDATE_METHOD": "auto"
+        "UPDATE_METHOD": "auto",
+        "UPDATE_API": "https://api.ionicjs.com",
+        "MAX_STORE": "2",
+        "MIN_BACKGROUND_DURATION": "30"
       }
     },
-    "platforms": []
+    "platforms": [
+      "android"
+    ]
   },
   "config": {
     "ionic_sass": "./config/sass.config.js",
