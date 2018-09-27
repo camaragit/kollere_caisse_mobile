@@ -25,6 +25,7 @@ export class HomePage {
     this.vctr.showBackButton(false);
   }
   onPage(page){
+    //Verification NFC
     if(page.component==CartePage || page.component==InscriptionPage)
     {
       this.nfc.enabled().then(ok=>{
