@@ -187,7 +187,7 @@ totalk:number;
     }
     else{
       this.api.afficheloading();
-          let url = this.GblVariable.URL+"ticketachatpanier?token="+this.GblVariable.token+"&nfcid="+encodeURI(this.idnfc)+"&codepanier="+this.GblVariable.codeticket;
+          let url = this.GblVariable.URL+"ticketachatpanier?token="+this.GblVariable.token+"&nfcid="+this.idnfc+"&codepanier="+this.GblVariable.codeticket;
           this.api.getpost(url).then(data=>{
             let val = JSON.parse(data.data);
             if(val.code=="0")
