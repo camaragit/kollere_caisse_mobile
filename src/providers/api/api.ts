@@ -107,8 +107,11 @@ export class ApiProvider {
         this.dismissloadin();
         this.bluetooth.enable().then(act => {
           this.GblVariable.statusImpriamte=false;
+          this.GblVariable.notfound=true;
+          this.GblVariable.message=""
         }).catch(err => {
-
+          this.GblVariable.notfound=true;
+          this.GblVariable.message=""
         })
       })
     })
