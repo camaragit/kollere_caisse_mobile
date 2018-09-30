@@ -39,6 +39,9 @@ export class ImprimantePage {
 
 
   }
+  annuler(){
+    this.viewCtrl.dismiss();
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ImprimantePage');

@@ -20,6 +20,13 @@
       <div *ngIf="GblVariable.notfound">
         <p>{{GblVariable.message}}</p>
         <ion-buttons end="">
+          <button  ion-button icon-end style="text-transform: none"  color="kollere" (click)="annuler()">
+              <span >Annuler
+                <ion-icon name="ios-close-circle-outline"></ion-icon>
+             </span>
+          </button>
+        </ion-buttons>
+        <ion-buttons end="">
           <button  ion-button icon-end style="text-transform: none"  color="kollere" (click)="rechercher()">
               <span >Rechercher
                 <ion-icon name="ios-bluetooth-outline"></ion-icon>
@@ -34,6 +41,13 @@
             <ion-radio [value]="imp" ></ion-radio>
           </ion-item>
         </ion-list>
+        <ion-buttons end="">
+          <button  ion-button icon-end style="text-transform: none"  color="kollere" (click)="annuler()">
+              <span >Annuler
+                <ion-icon name="ios-close-circle-outline"></ion-icon>
+             </span>
+          </button>
+        </ion-buttons>
         <ion-buttons end="" >
           <button ion-button icon-end style="text-transform: none" [disabled]="!selectedImp" color="kollere" (click)="lier()">
               <span >Lier
