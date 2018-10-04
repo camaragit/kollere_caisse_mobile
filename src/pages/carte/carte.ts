@@ -202,7 +202,8 @@ totalk:number;
                     {
                       this.api.dismissloadin();
                       this.GblVariable.solde = solde.montantRestant;
-                      this.GblVariable.cash = cash.montantRecu;
+                      this.GblVariable.
+                        cash = cash.montantRecu;
                       this.api.imprimerRecu(this.listeitems,this.totalb,this.totalk,true);
                       this.reload();
                       this.api.showAlert("Achat effectuée avec succès");
