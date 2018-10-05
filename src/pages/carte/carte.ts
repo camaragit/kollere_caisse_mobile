@@ -156,6 +156,7 @@ totalk:number;
 
   }
   selectionquantite(){
+
     this.prixboutique = this.prixunitb*this.quantite;
     this.prixkollere = this.prixunitk*this.quantite;
   }
@@ -170,8 +171,8 @@ totalk:number;
         if(val[i].item!=""){
           this.prixunitb = val[i].valeurItem.prixResto;
           this.prixunitk = val[i].valeurItem.prixKollere;
-          this.prixkollere = this.prixunitb
-          this.prixboutique = this.prixunitk
+          this.prixkollere = this.prixunitk
+          this.prixboutique = this.prixunitb
           this.quantite =1;
         }
       }
