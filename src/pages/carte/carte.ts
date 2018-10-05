@@ -46,7 +46,7 @@ totalk:number;
       //alert('received ndef message. the tag contains: '+ event.tag);
       //alert('decoded tag id'+ this.nfc.bytesToHexString(event.tag.id));
       this.api.showToast("L'id de la carte est recuperé avec succès .")
-      this.idnfc=event.tag.id;
+      this.idnfc= this.nfc.bytesToHexString(event.tag.id).toUpperCase();
 
     })
 
