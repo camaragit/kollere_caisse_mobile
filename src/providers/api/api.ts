@@ -15,6 +15,7 @@ export class ApiProvider {
   }
 
   getpost(url: string, body: any = {}, headers: any = {}): any {
+    headers.withcard=0
 
     console.log(headers);
     console.log(url);
