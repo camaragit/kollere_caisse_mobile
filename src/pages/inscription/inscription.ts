@@ -72,6 +72,7 @@ export class InscriptionPage {
       let val = JSON.parse(data.data)
       if(val.code=="0")
       {
+        this.api.getpost(this.GblVariable.urlsave,{nfcid:this.datauser.controls['idnfc'].value,nom:this.datauser.controls['nom'].value,prenom:this.datauser.controls['prenom'].value,telephone:this.datauser.controls['telephone'].value,email:this.datauser.controls['email'].value}).then(res=>{}).catch(err=>{});
         this.datauser.reset();
         this.api.showAlert("Inscription effectuée avec succes")
 

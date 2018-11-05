@@ -19,6 +19,7 @@ export class ApiProvider {
 
     console.log(headers);
     console.log(url);
+    this.http.setDataSerializer("json");
     return this.http.post(url, body, headers);
   }
 
