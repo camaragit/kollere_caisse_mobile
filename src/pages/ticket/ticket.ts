@@ -110,8 +110,18 @@ export class TicketPage {
               if(cash.code=="0" )
               {
                 this.api.dismissloadin();
-                this.GblVariable.solde = solde.montantRestant;
-                this.GblVariable.cash = cash.montantRecu;
+                if(val.agentid=="778")
+                {
+                  this.GblVariable.cash = cash.montantRecu;
+                  this.GblVariable.solde = cash.solde
+                }
+                else {
+                  this.GblVariable.cash = cash.montantRecu;
+                  this.GblVariable.solde = solde.montantRestant;
+                }
+
+                /*                this.GblVariable.solde = solde.montantRestant;
+                                this.GblVariable.cash = cash.montantRecu;*/
                 if(this.isticket)
                   this.api.imprimerRecu(this.listeitems,this.totalb,this.totalk,true);
                 else  this.api.imprimerRecu([],this.totalb,this.totalk,false,this.item);

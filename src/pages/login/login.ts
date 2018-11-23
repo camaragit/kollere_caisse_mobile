@@ -84,11 +84,20 @@ export class LoginPage {
                   this.store.set("boutique",val.prenomagent);
                   this.store.set("solde",solde.montantRestant);
                   this.store.set("cash",cash.montantRecu);
-                  this.GblVariable.solde = solde.montantRestant;
                   this.GblVariable.token = val.token;
                   this.GblVariable.agentid = val.agentid;
-                  this.GblVariable.boutique=val.nomresto
-                  this.GblVariable.cash = cash.montantRecu;
+                  this.GblVariable.boutique=val.nomresto;
+                  if(val.agentid=="778")
+                  {
+                    this.GblVariable.cash = cash.montantRecu;
+                    this.GblVariable.solde = cash.solde
+                  }
+                  else {
+                    this.GblVariable.cash = cash.montantRecu;
+                    this.GblVariable.solde = solde.montantRestant;
+                  }
+
+
                   this.nav.push(HomePage);
                 }
                 else{

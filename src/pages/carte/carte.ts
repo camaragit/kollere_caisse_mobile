@@ -202,9 +202,20 @@ totalk:number;
                     if(cash.code=="0" )
                     {
                       this.api.dismissloadin();
+                      if(val.agentid=="778")
+                      {
+                        this.GblVariable.cash = cash.montantRecu;
+                        this.GblVariable.solde = cash.solde;
+                      }
+                      else {
+                        this.GblVariable.cash = cash.montantRecu;
+                        this.GblVariable.solde = solde.montantRestant;
+                      }
+
+                      /*
                       this.GblVariable.solde = solde.montantRestant;
-                      this.GblVariable.
-                        cash = cash.montantRecu;
+                      this.GblVariable.cash = cash.montantRecu;
+*/
                       this.api.imprimerRecu(this.listeitems,this.totalb,this.totalk,true);
                       this.reload();
                       this.api.showAlert("Achat effectuée avec succès");
