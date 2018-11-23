@@ -20,12 +20,9 @@
 <ion-content padding >
   <ion-label class="monlabel" align="center">KOLLERE BOUTIQUE</ion-label>
   <div class="p-service p-box padding" color="danger">
-
     <a *ngFor="let a of menus"   (click)="onPage(a)">
       <img class="p-service-img " src="{{ a.nom }}" alt="etatplafond">
       <span class="p-box-title">{{ a.titre }}</span>
     </a>
-
-
   </div>
 </ion-content>
