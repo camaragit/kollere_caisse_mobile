@@ -22,7 +22,7 @@ import {ApiProvider} from "../../providers/api/api";
 export class InscriptionPage {
   datauser : FormGroup;
   phoneinvalid:any
-  constructor(private GblVariable:GlobalVariableProvider,private api:ApiProvider,public navCtrl: NavController, public navParams: NavParams,private nfc:NFC,private formbuilder:FormBuilder,) {
+  constructor(private GblVariable:GlobalVariableProvider,private api:ApiProvider,public navCtrl: NavController, public navParams: NavParams,private nfc:NFC,private formbuilder:FormBuilder) {
     this.datauser = this.formbuilder.group({
       nom: ['', Validators.required],
       prenom: ['', Validators.required],

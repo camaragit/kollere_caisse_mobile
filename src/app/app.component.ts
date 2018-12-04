@@ -10,15 +10,18 @@ import {HistoriquePage} from "../pages/historique/historique";
 import {AnnulationPage} from "../pages/annulation/annulation";
 import {DeconnexionPage} from "../pages/deconnexion/deconnexion";
 import {LoginPage} from "../pages/login/login";
+import {AbonnementPage} from "../pages/abonnement/abonnement";
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
-  rootPage:any = LoginPage;
+  rootPage:any = HomePage;
   menus=[{titre:'Acceuil',component:HomePage,nom:'home' },{titre:'Ticket',component:TicketPage,nom:'cart'},
     {titre:'Carte',component:CartePage,nom:'card' },{titre:'Historique',component:HistoriquePage,nom:'clock' },
-    {titre:'Inscription',component:AnnulationPage,nom:'ios-paper-outline'},{titre:'Deconnexion',component:DeconnexionPage,nom:'log-out'}
+    {titre:'Inscription',component:AnnulationPage,nom:'ios-paper-outline'},
+    {titre:'Abonnement',component:AbonnementPage,nom:'ios-bookmarks-outline'},
+    {titre:'Deconnexion',component:DeconnexionPage,nom:'log-out'}
    ]
 
   constructor(platform: Platform, statusBar: StatusBar) {
@@ -36,6 +39,8 @@ export class MyApp {
     {
       this.nav.setRoot(LoginPage);
     }
+    if(m.component==HomePage)
+      this.nav.setRoot(HomePage)
     else  this.nav.push(m.component)
   }
 }

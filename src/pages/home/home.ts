@@ -7,6 +7,7 @@ import {GlobalVariableProvider} from "../../providers/gloabal-variable/gloabal-v
 import {NFC} from "@ionic-native/nfc";
 import {ApiProvider} from "../../providers/api/api";
 import {InscriptionPage} from "../inscription/inscription";
+import {AbonnementPage} from "../abonnement/abonnement";
 
 @Component({
   selector: 'page-home',
@@ -14,8 +15,10 @@ import {InscriptionPage} from "../inscription/inscription";
 })
 export class HomePage {
   menus=[{titre:'TICKET',component:TicketPage,nom:'assets/imgs/shop.png'},
-    {titre:'CARTE',component:CartePage,nom:'assets/imgs/card.png' },{titre:'HISTORIQUE',component:HistoriquePage,nom:'assets/imgs/history.png' },
-    {titre:'INSCRIPTION',component:InscriptionPage,nom:'assets/imgs/inscription.png'}]
+    {titre:'CARTE',component:CartePage,nom:'assets/imgs/card.png' },
+    {titre:'HISTORIQUE',component:HistoriquePage,nom:'assets/imgs/history.png' },
+    {titre:'INSCRIPTION',component:InscriptionPage,nom:'assets/imgs/inscription.png'},
+    {titre:'ABONNEMENT',component:AbonnementPage,nom:'assets/imgs/abonnement.png'}]
 
   constructor(private api:ApiProvider,public navCtrl: NavController,public  vctr :ViewController,private GblVariable:GlobalVariableProvider,private nfc:NFC) {
 
@@ -39,7 +42,10 @@ export class HomePage {
 
       })
     }
-    else this.navCtrl.push(page.component);
+    else{
+      console.log(page.component);
+      this.navCtrl.push(page.component);
+    }
   }
 
 }

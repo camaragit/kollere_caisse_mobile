@@ -22,6 +22,7 @@ import {NFC} from "@ionic-native/nfc";
 import {Toast} from "@ionic-native/toast";
 import {InscriptionPage} from "../pages/inscription/inscription";
 import {Pro} from "@ionic/pro";
+import {AbonnementPage} from "../pages/abonnement/abonnement";
 Pro.init('6a13eeda', {
   appVersion: '0.0.1'
 })
@@ -55,7 +56,9 @@ export class MyErrorHandler implements ErrorHandler {
     CartePage,
     DeconnexionPage,
     HistoriquePage,
-    InscriptionPage,ImprimantePage
+    InscriptionPage,
+    ImprimantePage,
+    AbonnementPage
   ],
   imports: [
 
@@ -73,7 +76,9 @@ export class MyErrorHandler implements ErrorHandler {
     CartePage,
     DeconnexionPage,
     HistoriquePage,
-    InscriptionPage,ImprimantePage
+    InscriptionPage,
+    ImprimantePage,
+    AbonnementPage
   ],
   providers: [
     StatusBar,

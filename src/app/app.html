@@ -51,7 +51,7 @@
   <ion-content >
     <ion-list>
 
-      <button style="font-family: Georgia" menuClose ion-item *ngFor="let m of menus" (click)="openPage(m)" detail-push="" >
+      <button style="font-family: Georgia" menuClose ion-item *ngFor="let m of menus" (click)="onPage(m)" detail-push="" >
         <ion-icon item-start [name]="m.nom"  ></ion-icon>
         <span>{{m.titre}}</span>
 
