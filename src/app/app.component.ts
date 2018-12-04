@@ -16,7 +16,7 @@ import {AbonnementPage} from "../pages/abonnement/abonnement";
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
-  rootPage:any = HomePage;
+  rootPage:any = LoginPage;
   menus=[{titre:'Acceuil',component:HomePage,nom:'home' },{titre:'Ticket',component:TicketPage,nom:'cart'},
     {titre:'Carte',component:CartePage,nom:'card' },{titre:'Historique',component:HistoriquePage,nom:'clock' },
     {titre:'Inscription',component:AnnulationPage,nom:'ios-paper-outline'},
