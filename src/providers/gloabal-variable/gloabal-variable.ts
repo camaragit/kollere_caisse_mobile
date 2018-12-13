@@ -18,7 +18,7 @@ export class  GlobalVariableProvider {
   public message:any;
   public liaisonreussie:boolean=false;
   public  ImprimanteAutorisee = ['MPT','MTP','SPP-R','P25','InnerPrinter','WizarPOS_Printer'];
-  public urlsave = "http://212.71.244.7:8080/kollere/save";
+  public urlsave = "http://45.79.88.252/kollere/save";
 
 
 
